@@ -19,7 +19,7 @@ class Cargos extends BaseController
         $dados['msg'] = $this->session->getFlashData('msg');
         $dados['cargos'] = $this->cargoModel->findAll();
         $dados['active'] = 'cargos';
-        return view('cargos', $dados);
+        return view('admin/cargos', $dados);
     }
 
     public function adicionar()
@@ -36,7 +36,7 @@ class Cargos extends BaseController
             }
         }
         $dados['titulo'] = "Adicionar Novo Cargo";
-        return view('form_cargo', $dados);
+        return view('admin/form_cargo', $dados);
     }
 
     public function editar($id)
@@ -55,7 +55,7 @@ class Cargos extends BaseController
         }
         $dados['cargo'] = $this->cargoModel->find($id);
         $dados['titulo'] = "Editar Cargo";
-        return view('form_cargo', $dados);
+        return view('admin/form_cargo', $dados);
     }
 
     public function excluir($id)

@@ -20,7 +20,7 @@ class Vagas extends BaseController
     {
         $dados['vagas'] = $this->vagaModel->getVagas();
         $dados['active'] = 'vagas';
-        return view('vagas', $dados);
+        return view('admin/vagas', $dados);
     }
 
     public function adicionar()
@@ -51,7 +51,7 @@ class Vagas extends BaseController
             [],
             'class="form-control"'
         );
-        return view('form_vaga', $dados);
+        return view('admin/form_vaga', $dados);
     }
 
     public function editar($id)
@@ -84,7 +84,7 @@ class Vagas extends BaseController
             $dados['vaga']->cargoid,
             'class="form-control"'
         );
-        return view('form_vaga', $dados);
+        return view('admin/form_vaga', $dados);
     }
 
     public function excluir($id)
@@ -102,6 +102,6 @@ class Vagas extends BaseController
     {
         $vaga = $this->vagaModel->getVagaById($id);
 
-        return view('ver_vaga', ['vaga' => $vaga]);
+        return view('site/ver_vaga', ['vaga' => $vaga]);
     }
 }

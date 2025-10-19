@@ -1,4 +1,4 @@
-<?= $this->extend('layout_adm') ?>
+<?= $this->extend('layouts/layout_adm') ?>
 <?= $this->section('conteudo') ?>
 
 <h1 class="text-center mb-4">Lista de Cargos</h1>

@@ -1,4 +1,4 @@
-<?= $this->extend('layout') ?>
+<?= $this->extend('layouts/layout') ?>
 <?= $this->section('conteudo') ?>
 
 <div class="d-flex justify-content-end mb-4">
@@ -13,7 +13,7 @@
     <p>Nenhuma vaga disponível no momento.</p>
 <?php else : ?>
     <div class="row">
-        <?= $this->include('cards_vaga') ?>
+        <?= $this->include('components/cards_vaga') ?>
     </div>
 <?php endif; ?>
 

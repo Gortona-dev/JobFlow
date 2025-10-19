@@ -9,7 +9,7 @@ class AdminLogin extends BaseController
     public function index()
     {
         helper('url');
-        return view('admin_login');
+        return view('admin/admin_login');
     }
 
     public function login()

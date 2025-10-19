@@ -18,7 +18,7 @@ class Home extends BaseController
     public function index()
     {
         $dados['vagas'] = $this->vagaModel->getVagas();
-        return view('home', $dados);
+        return view('site/home', $dados);
     }
 
     public function verVaga($id)
@@ -30,6 +30,6 @@ class Home extends BaseController
         }
 
         $data['vaga'] = $vaga;
-        return view('ver_vaga', $data);
+        return view('site/ver_vaga', $data);
     }
 }

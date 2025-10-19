@@ -14,8 +14,6 @@
         <h3 class="mb-3 text-center">Acesso Admin</h3>
 
         <form method="post" action="<?= base_url('admin-login') ?>">
-            <?= csrf_field() ?>
-
             <div class="mb-3">
                 <label class="form-label">Usuário</label>
                 <input name="user" type="text" class="form-control" value="admin" required>
