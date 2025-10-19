@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 
 class Cargos extends BaseController
 {
@@ -23,13 +22,13 @@ class Cargos extends BaseController
         return view('cargos', $dados);
     }
 
-    public function adicionar() 
+    public function adicionar()
     {
         $dados['msg'] = "";
-        if($this->request->is('post')) {
+        if ($this->request->is('post')) {
             $novoCargo['nomecargo'] = $this->request->getPost('nomecargo');
 
-            if($this->cargoModel->insert($novoCargo)) {
+            if ($this->cargoModel->insert($novoCargo)) {
                 return redirect()->to(base_url('cargos'))->with('msg', 'Cargo adicionado com sucesso');
             } else {
                 $dados['msg'] = "Erro ao adicionar cargo";
@@ -43,11 +42,11 @@ class Cargos extends BaseController
     public function editar($id)
     {
         $dados['msg'] = "";
-        if($this->request->is('post')) {
+        if ($this->request->is('post')) {
             $editarId = $this->request->getPost('id');
             $editarCargo['nomecargo'] = $this->request->getPost('nomecargo');
 
-            if($this->cargoModel->update($editarId, $editarCargo)) {
+            if ($this->cargoModel->update($editarId, $editarCargo)) {
                 return redirect()->to(base_url('cargos'))->with('msg', 'Cargo editado com sucesso');
             } else {
                 $dados['msg'] = "Erro ao editar cargo";
@@ -61,12 +60,18 @@ class Cargos extends BaseController
 
     public function excluir($id)
     {
-        if($this->cargoModel->delete($id)) {
-            $this->session->setFlashData('msg', 'Cargo excluído com sucesso');
-        } else {
-            $this->session->setFlashData('msg', 'Erro ao excluir cargo');
-        }
+        $vagaModel = model('VagaModel');
+        $vagasExistentes = $vagaModel->where('cargoid', $id)->countAllResults();
 
+        if ($vagasExistentes > 0) {
+            $this->session->setFlashData('msg', 'Não é possível excluir este cargo, existem vagas cadastradas com ele.');
+        } else {
+            if ($this->cargoModel->delete($id)) {
+                $this->session->setFlashData('msg', 'Cargo excluído com sucesso');
+            } else {
+                $this->session->setFlashData('msg', 'Erro ao excluir cargo');
+            }
+        }
         return redirect()->to(base_url('cargos'));
     }
 }

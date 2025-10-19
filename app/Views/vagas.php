@@ -1,5 +1,4 @@
 <?= $this->extend('layout_adm') ?>
-
 <?= $this->section('conteudo') ?>
 
 <h1 class="text-center mb-4">Lista de Vagas</h1>
@@ -9,14 +8,14 @@
 </div>
 
 <?php if (session()->getFlashdata('msg')): ?>
-    <div id="flash-msg" class="alert alert-success position-fixed bottom-0 start-0 m-3" style="z-index: 1050; min-width: 250px;">
+    <div id="flash-msg" class="alert alert-success position-fixed bottom-0 start-0 m-3">
         <?= session()->getFlashdata('msg') ?>
     </div>
 <?php endif; ?>
 
-<div style="max-height: 400px; overflow-y: auto;">
+<div class="table-container">
     <table class="table table-striped">
-        <thead class="table-light position-sticky top-0" style="z-index: 1;">
+        <thead class="table-light position-sticky top-0">
             <tr>
                 <th>ID</th>
                 <th>Cargo</th>
@@ -25,30 +24,24 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($vagas as $vaga) : ?>
+            <?php foreach ($vagas as $vaga): ?>
                 <tr>
                     <td><?= $vaga->id ?></td>
                     <td><?= $vaga->nomecargo ?></td>
                     <td><?= $vaga->empresa ?></td>
                     <td>
                         <a href="<?= base_url('vagas/editar/' . $vaga->id) ?>" class="btn btn-sm btn-secondary">Editar</a>
-                        &nbsp;
-                        <a href="<?= base_url('vagas/excluir/' . $vaga->id) ?>" class="btn btn-sm btn-danger">Excluir</a>
+                        <a href="<?= base_url('vagas/excluir/' . $vaga->id) ?>"
+                            class="btn btn-sm btn-danger"
+                            onclick="return confirm('Tem certeza que deseja excluir esta vaga?')">
+                            Excluir
+                        </a>
+
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 </div>
-
-<script>
-    setTimeout(() => {
-        const flash = document.getElementById('flash-msg');
-        if (flash) {
-            flash.style.transition = "opacity 0.5s";
-            flash.style.opacity = "0";
-        }
-    }, 2500);
-</script>
 
 <?= $this->endSection() ?>

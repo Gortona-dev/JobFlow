@@ -31,7 +31,12 @@ class CargoModel extends Model
     protected $validationRules      = [
         'nomecargo' => 'required'
     ];
-    protected $validationMessages   = [];
+    protected $validationMessages = [
+        'nomecargo' => [
+            'required' => 'O nome do cargo é obrigatório.'
+        ]
+    ];
+
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 

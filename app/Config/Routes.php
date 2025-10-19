@@ -7,13 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-
 // admin
 $routes->post('/admin-login', 'AdminLogin::login');
 $routes->get('/admin-login', 'AdminLogin::index');
 $routes->get('/admin-logout', 'AdminLogin::logout');
-
-
 
 // vagas
 $routes->get('/vagas', 'Vagas::index');

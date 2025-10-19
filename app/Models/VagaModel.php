@@ -28,7 +28,7 @@ class VagaModel extends Model
 
     protected $validationRules = [
         'descricao' => 'required|min_length[3]',
-        'salario'   => 'required|decimal'
+        'salario'   => 'required|decimal|greater_than[0]'
     ];
     protected $validationMessages = [
         'descricao' => [
@@ -56,6 +56,7 @@ class VagaModel extends Model
     {
         return $this->select('vagas.*, c.nomecargo')
             ->join('cargos c', 'vagas.cargoid = c.id')
+            ->orderBy('vagas.id', 'ASC')
             ->get()
             ->getResult();
     }
