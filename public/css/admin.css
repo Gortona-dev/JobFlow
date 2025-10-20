@@ -1,36 +1,89 @@
-body {
-    padding-top: 50px;
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+:root{
+  --font: Inter, system-ui, Arial, sans-serif;
+  --bg: #f7f8fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #0d6efd;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0,0,0,.06);
 }
 
-.menu-top {
-    margin-bottom: 20px;
+html, body{
+  height:100%;
+}
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
 }
 
-.menu-top a {
-    margin-right: 20px;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: black;
+.menu-top{
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.menu-top a{
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: .2s;
+}
+.menu-top a:hover{
+  background: #eef2ff;
+  color: #1d4ed8;
+}
+.menu-top a.active{
+  background: #e7f1ff;
+  color: var(--primary);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(13,110,253,.25);
 }
 
-.menu-top a.active {
-    font-weight: bold;
-    text-decoration: underline;
+.card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-body {
-  background-color: #f8f9fa;
+.table thead th{
+  position: sticky; top:0; z-index:2;
+  background: #fff;
+  box-shadow: 0 1px 0 var(--border);
+}
+.table td, .table th{
+  vertical-align: middle;
+}
+.table-hover tbody tr:hover{
+  background: #fafcff;
 }
 
-.table-container {
-  max-height: 400px;
-  overflow-y: auto;
+.table-container{
+  max-height: 480px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
 }
 
-#flash-msg {
-  z-index: 1050;
-  min-width: 250px;
-  transition: opacity 0.5s;
+#flash-msg{
+  position: fixed;
+  right: 16px; bottom: 16px;
+  z-index: 1080;
+  min-width: 320px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: opacity .25s, transform .25s;
 }
+
+.arrow{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:10px;
+  border:1px solid var(--border);
+  color: var(--text);
+}
+.arrow:hover{ background:#fff; }

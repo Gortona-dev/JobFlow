@@ -1,28 +1,48 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    padding-top: 50px;
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+:root{
+  --font: Inter, system-ui, Arial, sans-serif;
+  --bg: #f7f8fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 
-main {
-    flex: 1;
+body{
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
 }
 
-footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 1rem 0;
-    border-top: 1px solid #e7e7e7;
-    font-size: 0.9rem;
-    color: #6c757d;
+.hero-blend{
+  background: linear-gradient(135deg,#eef4ff,#f8fafc);
+  border-radius: var(--radius);
+  border: 1px solid #e9eefc;
 }
 
-.arrow {
-    font-size: 2rem;
-    text-decoration: none;
-    color: black;
-    margin-bottom: 20px;
+.vaga-card{
+  border-radius: var(--radius);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
+.vaga-card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.vaga-desc{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn{
+  border-radius: 12px;
+  padding: .6rem 1rem;
+}
+.btn-primary{
+  box-shadow: 0 6px 14px rgba(13,110,253,.18);
+}
+.btn-primary:hover{
+  box-shadow: 0 10px 24px rgba(13,110,253,.24);
+}
+
+.pagination .page-link{ border-radius: 10px; }
