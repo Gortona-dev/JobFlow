@@ -11,35 +11,18 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-    <div class="container">
+  <nav class="navbar navbar-light bg-light border-bottom sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
       <a class="navbar-brand d-flex align-items-center gap-2" href="<?= base_url() ?>">
         <i class="bi bi-briefcase-fill"></i>
-        <span>Vagas</span>
+        <span>Painel Admin</span>
       </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTop" aria-controls="navTop" aria-expanded="false" aria-label="Alternar navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navTop">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item">
-            <a class="nav-link <?= ($active ?? '')==='vagas' ? 'active' : '' ?>" href="<?= base_url('vagas') ?>">
-               Vagas
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?= ($active ?? '')==='cargos' ? 'active' : '' ?>" href="<?= base_url('cargos') ?>">
-               Cargos
-            </a>
-          </li>
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-outline-danger btn-sm" href="<?= base_url('admin-logout') ?>">
-              <i class="bi bi-box-arrow-right me-1"></i> Sair
-            </a>
-          </li>
-        </ul>
+      <div class="d-flex gap-2">
+        <a href="<?= base_url('vagas') ?>" class="btn btn-outline-secondary btn-sm ">Vagas</a>
+        <a href="<?= base_url('cargos') ?>" class="btn btn-outline-secondary btn-sm ">Cargos</a>
+        <a href="<?= base_url('admin-logout') ?>" class="btn btn-danger btn-sm">
+          <i class="bi bi-box-arrow-right"></i> Sair
+        </a>
       </div>
     </div>
   </nav>

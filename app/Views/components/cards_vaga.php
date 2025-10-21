@@ -12,7 +12,7 @@
 
         <?php if (!empty($vaga->empresa)): ?>
           <div class="text-secondary small mb-2">
-            <i class="bi bi-buildings me-1"></i><?= esc($vaga->empresa) ?>
+            <?= esc($vaga->empresa) ?>
           </div>
         <?php endif; ?>
 
@@ -29,17 +29,17 @@
         <div class="d-flex flex-wrap gap-2 mb-3">
           <?php if (!empty($vaga->cidade) || !empty($vaga->uf)): ?>
             <span class="badge bg-light text-secondary border rounded-pill">
-              <i class="bi bi-geo-alt me-1"></i><?= esc(trim(($vaga->cidade ?? '').' '.($vaga->uf ?? ''))) ?>
+              <?= esc(trim(($vaga->cidade ?? '').' '.($vaga->uf ?? ''))) ?>
             </span>
           <?php endif; ?>
           <?php if (!empty($vaga->salario)): ?>
-            <span class="badge bg-success-subtle text-success border rounded-pill">
-              <i class="bi bi-cash-coin me-1"></i><?= esc($vaga->salario) ?>
+           <span class="badge bg-success-subtle text-success border rounded-pill">
+            <i class="bi bi-cash-coin"></i> <?= esc($vaga->salario) ?>
             </span>
           <?php endif; ?>
           <?php if (!empty($vaga->modalidade)): ?>
             <span class="badge bg-info-subtle text-info border rounded-pill">
-              <i class="bi bi-laptop me-1"></i><?= esc($vaga->modalidade) ?>
+              <?= esc($vaga->modalidade) ?>
             </span>
           <?php endif; ?>
         </div>
@@ -52,4 +52,5 @@
       </div>
     </div>
   </div>
+  
 <?php endforeach; ?>

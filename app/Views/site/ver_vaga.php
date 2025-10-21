@@ -1,8 +1,6 @@
 <?= $this->extend('layouts/layout') ?>
-
 <?= $this->section('conteudo') ?>
 
-<a class="arrow" href="<?= base_url('/') ?>">&larr;</a>
 <div class="container mt-4">
     <h1 class="mb-3"><?= $vaga->nomecargo ?></h1>
 
