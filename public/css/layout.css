@@ -48,6 +48,10 @@ main {
   overflow: hidden;
 }
 
+a{
+  text-decoration: none;
+}
+
 .btn{
   border-radius: 12px;
   padding: .6rem 1rem;
