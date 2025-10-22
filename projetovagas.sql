@@ -20,11 +20,10 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `projetovagas`
 --
-  CREATE DATABASE IF NOT EXISTS projetovagas
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_general_ci;
 
-USE projetovagas;
+CREATE DATABASE IF NOT EXISTS projetovagas;
+USE projetovagas;
+
 -- --------------------------------------------------------
 
 --

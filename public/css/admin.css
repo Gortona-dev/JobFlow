@@ -1,4 +1,4 @@
-:root{
+:root {
   --font: Inter, system-ui, Arial, sans-serif;
   --bg: #f7f8fb;
   --text: #1f2937;
@@ -7,62 +7,77 @@
   --card: #ffffff;
   --border: #e5e7eb;
   --radius: 14px;
-  --shadow: 0 8px 24px rgba(0,0,0,.06);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-html, body{
-  height:100%;
-}
-body{
-  background: var(--bg);
+html,
+body {
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font);
+  height: 100%;
+  margin: 0;
 }
 
-.menu-top{
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-top {
   margin: 24px 0;
   display: flex;
   gap: 16px;
   align-items: center;
 }
-.menu-top a{
+.menu-top a {
   font-size: 1.05rem;
   color: var(--text);
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 10px;
-  transition: .2s;
+  transition: 0.2s;
 }
-.menu-top a:hover{
+.menu-top a:hover {
   background: #eef2ff;
   color: #1d4ed8;
 }
-.menu-top a.active{
+.menu-top a.active {
   background: #e7f1ff;
   color: var(--primary);
   font-weight: 600;
-  box-shadow: inset 0 0 0 1px rgba(13,110,253,.25);
+  box-shadow: inset 0 0 0 1px rgba(13, 110, 253, 0.25);
 }
 
-.card{
+.card {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-.table thead th{
-  position: sticky; top:0; z-index:2;
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: #fff;
   box-shadow: 0 1px 0 var(--border);
 }
-.table td, .table th{
+.table td,
+.table th {
   vertical-align: middle;
 }
-.table-hover tbody tr:hover{
+.table-hover tbody tr:hover {
   background: #fafcff;
 }
 
-.table-container{
+.table-container {
   max-height: 480px;
   overflow: auto;
   border: 1px solid var(--border);
@@ -70,20 +85,22 @@ body{
   background: #fff;
 }
 
-#flash-msg{
-  position: fixed;
-  right: 16px; bottom: 16px;
-  z-index: 1080;
-  min-width: 320px;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: opacity .25s, transform .25s;
+#flash-msg {
+  z-index: 1050;
+  min-width: 250px;
+  transition: opacity 0.5s;
 }
 
-.arrow{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px; border-radius:10px;
-  border:1px solid var(--border);
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
   color: var(--text);
 }
-.arrow:hover{ background:#fff; }
+.arrow:hover {
+  background: #fff;
+}
