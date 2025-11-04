@@ -24,7 +24,7 @@ Projeto desenvolvido como parte de uma atividade acadêmica.
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/phpvagas.git
+   https://github.com/Gortona-dev/JobFlow.git
    ```
 
 2. **Acesse a pasta do projeto**
