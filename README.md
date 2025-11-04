@@ -29,7 +29,7 @@ Projeto desenvolvido como parte de uma atividade acadêmica.
 
 2. **Acesse a pasta do projeto**
    ```bash
-   cd phpvagas
+   cd JobFlow
    ```
 
 3. **Configure o arquivo .env**
